@@ -41,13 +41,42 @@ public class App {
 
     public static int firstTwoSum(int[] nums) {
 
-        return -1; //this is a placeholder
+        
+        if(nums.length == 0){
+            return 0;
+        }
+        if(nums.length == 1){
+            return nums[0];
+        }
+        int[] array = new int[3];
+        array[0]=nums[0];
+        array[1]=nums[1];
+        int sum = array[0]+array[1];
+        if(nums.length == 2 || nums.length > 2 ){
+            return sum;
+        }
+       
+        return -1;
+
+    //    int lastPosition =nums.length-1;
+    //    array[1]= nums[lastPosition];
+    //    return array;
+        // return -1; //this is a placeholder
 
     }
 
     public static int minWordLength(String sentence){
 
 
-        return -1; //this is a placeholder
+        String[] parts =sentence.split(" ");
+        int least=5;
+        for (String word: parts){
+
+            int wordLength = word.length();
+            if (wordLength < least){
+                least= wordLength;
+            }
+        }
+    return least;
     }
 }
